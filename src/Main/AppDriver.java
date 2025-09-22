@@ -24,8 +24,10 @@ public class AppDriver {
         arr.pop();
         arr.push_back(30);
         arr.remove(4);
-        print(arr);
-        
+        //print(arr);
+        //print using the iterator
+        for(var i: arr)
+            print(i);
     }
     
     public static void print(Object obj)

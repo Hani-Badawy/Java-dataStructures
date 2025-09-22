@@ -1,6 +1,8 @@
 
 package dataStructures;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Hani Mohammed (Hani Badawy)
@@ -11,22 +13,12 @@ package dataStructures;
  * This class is a wrapper around Java array, but it allows different operations, like push_back and delete which are typically O(n).
  * @param <T>
  */
-public class Array<T> {
-    T[] data;
-    int length;
-    int capacity;
+public class Array<T> implements Iterable<T>{
+    private T[] data;
+    private int length;
+    private int capacity;
     final int  MAX_CAPACITY = 1000;
-    public Array(T[] data) {
-        this.data = data;
-        this.capacity = MAX_CAPACITY;
-        length = data.length;
-    }
 
-    public Array(T[] data, int capacity) {
-        this.data = data;
-        this.capacity = capacity;
-        length = data.length;
-    }
 
     public Array(int capacity) {
         this.capacity = capacity;
@@ -38,6 +30,11 @@ public class Array<T> {
         capacity = MAX_CAPACITY;
         data = (T[])new Object[capacity];
         length = 0;
+    }
+    
+    public T getElementAt(int index)
+    {
+        return data[index];
     }
     
     public void push_back(T element)
@@ -91,5 +88,23 @@ public class Array<T> {
             builder.append('\t');
         }
      return builder.toString();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        ArrayIterator<T> iterator = new ArrayIterator<>(this);
+        return iterator;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getLength() {
+        return length;
     }
 }
