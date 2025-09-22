@@ -9,19 +9,20 @@ package dataStructures;
 /**
  * 
  * This class is a wrapper around Java array, but it allows different operations, like push_back and delete which are typically O(n).
+ * @param <T>
  */
-public class Array {
-    int[] data;
+public class Array<T> {
+    T[] data;
     int length;
     int capacity;
     final int  MAX_CAPACITY = 1000;
-    public Array(int[] data) {
+    public Array(T[] data) {
         this.data = data;
         this.capacity = MAX_CAPACITY;
         length = data.length;
     }
 
-    public Array(int[] data, int capacity) {
+    public Array(T[] data, int capacity) {
         this.data = data;
         this.capacity = capacity;
         length = data.length;
@@ -29,22 +30,20 @@ public class Array {
 
     public Array(int capacity) {
         this.capacity = capacity;
-        data = new int[capacity];
+        data = (T[])new Object[capacity];
         length = 0;
     }
 
     public Array() {
         capacity = MAX_CAPACITY;
-        data = new int[capacity];
+        data = (T[])new Object[capacity];
         length = 0;
     }
     
-    public void push_back(int element)
+    public void push_back(T element)
     {
-       int[] newData = new int[length+1];
-       for (int i = 0; i<length; i++)
-           newData[i] = data[i];
-      
+       T[] newData = (T[])new Object[length+1];
+       System.arraycopy(data, 0, newData, 0, length);
        newData[length++] = element;
     }
     
