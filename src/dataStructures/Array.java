@@ -45,6 +45,51 @@ public class Array<T> {
        T[] newData = (T[])new Object[length+1];
        System.arraycopy(data, 0, newData, 0, length);
        newData[length++] = element;
+       data = newData;
     }
     
+    /**
+     * We can just set the length to length-1, without having to copy the data
+     * This will result in O(1) operation.
+     */
+    public void pop()
+    {
+        length--;
+    }
+    
+    public void insert(int index, T element)
+    {
+        T[] newData = (T[])new Object[length+1];
+        System.arraycopy(data, 0, newData, 0, index);
+        
+        newData[index] = element;
+        for (int i = index+1; i<length+1; i++)
+            newData[i] = data[i-1];
+        data = newData;
+        length++;
+    }
+    
+    public void remove(int index)
+    {
+        T[] newData = (T[])new Object[length-1];
+        System.arraycopy(data, 0, newData, 0, index);
+        
+        for (int i = index+1; i<length; i++)
+            newData[i-1] = data[i];
+        data = newData;
+        length--;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("Length:\t");
+        builder.append(length);
+        builder.append("\nData:\t");
+        for (int i = 0; i<length;i++)
+        {
+            builder.append(data[i]);
+            builder.append('\t');
+        }
+     return builder.toString();
+    }
 }

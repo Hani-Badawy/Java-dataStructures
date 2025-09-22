@@ -1,20 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package Main;
+
+import dataStructures.Array;
 
 /**
  *
- * @author hani2
+ * @author Hani Mohammed
  */
+
 public class AppDriver {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Testing array
+        Array<Integer> arr = new Array<>();
+        for (int i =1;i<11;i++)
+            arr.push_back(i);
+        
+        arr.pop();
+        arr.insert(5, 50);
+        arr.pop();
+        arr.push_back(30);
+        arr.remove(4);
+        print(arr);
+        
     }
     
+    public static void print(Object obj)
+    {
+        System.out.println(obj);
+    }
 }
