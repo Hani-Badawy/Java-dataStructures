@@ -3,6 +3,7 @@ package Main;
 import dataStructures.Array;
 import dataStructures.LinkedList;
 import dataStructures.SLLNode;
+import dataStructures.Stack;
 
 /**
  *
@@ -43,6 +44,16 @@ public class AppDriver {
         // testing linkedlist iterator
         for (var i:list)
             print(i);
+        
+        // Testing stack
+        Stack<Integer> stack = new Stack<>(10);
+        stack.push(1);
+        stack.push(2);
+        stack.push(5);
+        print(stack.peek());
+        stack.pop();
+        print(stack.peek());
+               
     }
 
     public static void print(Object obj) {
