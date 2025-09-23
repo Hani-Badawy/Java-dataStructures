@@ -12,17 +12,18 @@ import java.util.Iterator;
  * @param <T>
  */
 public class ArrayIterator<T> implements Iterator<T> {
-    
+
     private Array<T> array;
     private int index;
+
     public ArrayIterator(Array array) {
         this.array = array;
-        index = 0; 
+        index = 0;
     }
 
     @Override
     public boolean hasNext() {
-       return index<array.getLength()-1;
+        return index < array.getLength() - 1;
     }
 
     @Override

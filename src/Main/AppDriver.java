@@ -1,13 +1,13 @@
-
 package Main;
 
 import dataStructures.Array;
+import dataStructures.LinkedList;
+import dataStructures.SLLNode;
 
 /**
  *
  * @author Hani Mohammed
  */
-
 public class AppDriver {
 
     /**
@@ -16,9 +16,10 @@ public class AppDriver {
     public static void main(String[] args) {
         // Testing array
         Array<Integer> arr = new Array<>();
-        for (int i =1;i<11;i++)
+        for (int i = 1; i < 11; i++) {
             arr.push_back(i);
-        
+        }
+
         arr.pop();
         arr.insert(5, 50);
         arr.pop();
@@ -26,12 +27,19 @@ public class AppDriver {
         arr.remove(4);
         //print(arr);
         //print using the iterator
-        for(var i: arr)
+        for (var i : arr) {
             print(i);
+        }
+        
+        //Testing LinkedList
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = 1;i<=10;i++)
+            list.add(new SLLNode(i));
+        
+        print(list);
     }
-    
-    public static void print(Object obj)
-    {
+
+    public static void print(Object obj) {
         System.out.println(obj);
     }
 }
