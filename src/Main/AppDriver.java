@@ -36,6 +36,8 @@ public class AppDriver {
         for (int i = 1;i<=10;i++)
             list.add(new SLLNode(i));
         
+        list.pop();
+        list.insert(5, new SLLNode<Integer>(50));
         print(list);
     }
 
