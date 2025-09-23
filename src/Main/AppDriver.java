@@ -38,7 +38,7 @@ public class AppDriver {
             list.add(new SLLNode(i));
         
         list.pop();
-        list.insert(5, new SLLNode<Integer>(50));
+        list.insert(5, new SLLNode<>(50));
         print(list);
         
         // testing linkedlist iterator
