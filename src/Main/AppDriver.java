@@ -39,6 +39,10 @@ public class AppDriver {
         list.pop();
         list.insert(5, new SLLNode<Integer>(50));
         print(list);
+        
+        // testing linkedlist iterator
+        for (var i:list)
+            print(i);
     }
 
     public static void print(Object obj) {

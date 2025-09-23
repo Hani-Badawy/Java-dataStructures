@@ -1,11 +1,13 @@
 package dataStructures;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Hani Mohammed (Hani Badawy)
  * @param <T>
  */
-public class LinkedList<T> {
+public class LinkedList<T> implements Iterable<SLLNode>{
 
     SLLNode<T> head, tail;
     int length;
@@ -85,5 +87,11 @@ public class LinkedList<T> {
             node = node.next;
         }
         return builder.toString();
+    }
+
+    @Override
+    public Iterator<SLLNode> iterator() {
+        LinkedListIterator<T> iterator = new LinkedListIterator<>(this);
+        return  iterator;
     }
 }
