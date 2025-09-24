@@ -4,10 +4,11 @@ package dataStructures;
 /**
  *
  * @author Hani Mohammed (Hani Badawy)
+ * @param <T>
  */
-public class Queue {
+public class Queue<T> {
 
-    int[] data;
+    T[] data;
     int front;
     int back;
     int capacity;
@@ -15,25 +16,25 @@ public class Queue {
 
     public Queue(int capacity) {
         this.capacity = capacity;
-        data = new int[capacity];
+        data = (T[])new Object[capacity];
         this.front = this.back = -1;
         this.length = back - front + 1;
     }
 
     public Queue() {
         this.capacity = 100;
-        data = new int[capacity];
+        data = (T[])new Object[capacity];
         this.front = 0;
         this.back = -1;
         this.length = back - front + 1;
     }
 
-    public void enqueue(int element) {
+    public void enqueue(T element) {
         data[++back] = element;
         this.length = back - front + 1;
     }
 
-    public int dequeue() throws Exception {
+    public T dequeue() throws Exception {
         if(this.length==1)
             reset();
         if (isEmpty()) {
@@ -46,7 +47,7 @@ public class Queue {
         return data[front];
     }
     
-    public int peek()
+    public T peek()
     {
         return data[front];
     }
