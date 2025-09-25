@@ -10,8 +10,8 @@ package dataStructures;
  */
 public class Stack<T> {
     private int top;
-    private int capacity;
-    private T[] data;
+    private final int capacity;
+    private final T[] data;
 
     public Stack(int capacity) {
         this.capacity = capacity;

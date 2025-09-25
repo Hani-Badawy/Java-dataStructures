@@ -1,14 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package dataStructures;
 
 import java.util.Iterator;
 
 /**
  *
- * @author hani2
+ * @author Hani Mohammed (Hani Badawy)
  * @param <T>
  */
 public class LinkedListIterator<T> implements Iterator<SLLNode> {
